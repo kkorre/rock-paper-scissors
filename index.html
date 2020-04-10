@@ -1,13 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-  <title>Rock, Paper, Scissors</title>
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rock, Paper, Scissors</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <section class="screen visible" id="screen-1">
+      <button class="btn btn--paper">paper</button>
+      <button class="btn btn--rock">rock</button>
+      <button class="btn btn--scissors">scissors</button>
+    </section>
 
+    <section class="screen" id="screen-2">
+      <div>User: <span id="user-score">0</span></div>
+      <div>Computer: <span id="computer-score">0</span></div>
+      <p>You picked <span id="user-pick"></span></p>
+      <p>The computer picked <span id="computer-pick"></span></p>
+      <p id="result"></p>
+      <button id="play-again">Play Again</button>
+    </section>
 
-  
-</body>
+    <script src="script.js"></script>
+  </body>
 </html>
