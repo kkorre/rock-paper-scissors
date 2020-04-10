@@ -6,7 +6,7 @@ const userPick = document.querySelector("#user-pick");
 const computerPick = document.querySelector("#computer-pick");
 const userScoreText = document.querySelector("#user-score");
 const computerScoreText = document.querySelector("#computer-score");
-const choices = ["rock", "paper", "scissors"];
+const choices = ["rock", "paper", "scissors", "lizard", "spock"];
 const playAgainBtn = document.querySelector("#play-again");
 let userChoice;
 let computerChoice;
@@ -38,7 +38,7 @@ function getUserChoice(e) {
 }
 
 function getComputerChoice() {
-  const computerIndex = Math.floor(Math.random() * 3);
+  const computerIndex = Math.floor(Math.random() * 5);
   computerChoice = choices[computerIndex];
   computerPick.textContent = computerChoice;
 }
@@ -52,7 +52,7 @@ function calculateResult() {
   }
 
   if (userChoice === "rock") {
-    if (computerChoice === "paper") {
+    if (computerChoice === "paper" || computerChoice === "spock") {
       resultText = "Computer wins!";
       updateComputerScore();
     } else {
@@ -63,7 +63,7 @@ function calculateResult() {
   }
 
   if (userChoice === "paper") {
-    if (computerChoice === "scissors") {
+    if (computerChoice === "scissors" || computerChoice === "lizard") {
       resultText = "Computer wins!";
       updateComputerScore();
     } else {
@@ -74,7 +74,29 @@ function calculateResult() {
   }
 
   if (userChoice === "scissors") {
-    if (computerChoice === "rock") {
+    if (computerChoice === "rock" || computerChoice === "spock") {
+      resultText = "Computer wins!";
+      updateComputerScore();
+    } else {
+      resultText = "You win!";
+      updateUserScore();
+    }
+    return;
+  }
+
+  if (userChoice === "lizard") {
+    if (computerChoice === "rock" || computerChoice === "scissors") {
+      resultText = "Computer wins!";
+      updateComputerScore();
+    } else {
+      resultText = "You win!";
+      updateUserScore();
+    }
+    return;
+  }
+
+  if (userChoice === "spock") {
+    if (computerChoice === "paper" || computerChoice === "lizard") {
       resultText = "Computer wins!";
       updateComputerScore();
     } else {

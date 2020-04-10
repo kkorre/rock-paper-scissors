@@ -1,9 +1,16 @@
-# Rock, Paper, Scissors
+# Rock, Paper, Scissors, Lizard, Spock
 
-An implementation of the game Rock, Paper, Scissors.
+An implementation of the game Rock, Paper, Scissors, Lizard, Spock.
 
 ## Rules
-
-- Paper beats Rock
-- Rock beats Scissors
-- Scissors beats Paper
+It's simple!  
+- Scissors cuts paper  
+- Paper covers rock  
+- Rock crushes lizard  
+- Lizard poisons Spock  
+- Spock smashes scissors  
+- Scissors decapitates lizard  
+- Lizard eats paper  
+- Paper disproves Spock  
+- Spock vaporizes rock  
+- Rock crushes scissors
