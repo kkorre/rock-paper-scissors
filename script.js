@@ -1,4 +1,4 @@
-const btns = document.querySelectorAll(".btn");
+const btns = document.querySelectorAll(".btn-icon");
 const screen1 = document.querySelector("#screen-1");
 const screen2 = document.querySelector("#screen-2");
 const result = document.querySelector("#result");
@@ -8,6 +8,9 @@ const choices = ["rock", "paper", "scissors", "lizard", "spock"];
 const playAgainBtn = document.querySelector("#play-again");
 const computerPickImg = document.querySelector("#computer-pick-img");
 const userPickImg = document.querySelector("#user-pick-img");
+const btnRules = document.querySelector(".btn-rules");
+const btnClose = document.querySelector(".close");
+const modal = document.querySelector(".modal");
 let userChoice;
 let computerChoice;
 let userScore = 0;
@@ -34,7 +37,7 @@ btns.forEach((btn) =>
 
 function getUserChoice(e) {
   if (userChoice !== null) {
-    userPickImg.classList.remove(userChoice, "scale");
+    userPickImg.classList.remove(userChoice);
   }
   userChoice = e.target.textContent;
   userPickImg.classList.add(userChoice);
@@ -45,7 +48,7 @@ function getUserChoice(e) {
 
 function getComputerChoice() {
   if (computerChoice !== null) {
-    computerPickImg.classList.remove(computerChoice, "scale");
+    computerPickImg.classList.remove(computerChoice);
   }
   const computerIndex = Math.floor(Math.random() * 5);
   computerChoice = choices[computerIndex];
@@ -129,7 +132,14 @@ function updateComputerScore() {
   computerScoreText.textContent = computerScore;
 }
 
+// Show the first screen, in order to play again
 playAgainBtn.addEventListener("click", () => {
   screen2.classList.remove("visible");
   screen1.classList.add("visible");
+  userPickImg.classList.remove("scale");
+  computerPickImg.classList.remove("scale");
 });
+
+// Modal visibility
+btnRules.onclick = () => (modal.style.display = "block");
+btnClose.onclick = () => (modal.style.display = "none");
