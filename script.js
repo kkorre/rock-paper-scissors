@@ -2,17 +2,17 @@ const btns = document.querySelectorAll(".btn");
 const screen1 = document.querySelector("#screen-1");
 const screen2 = document.querySelector("#screen-2");
 const result = document.querySelector("#result");
-const userPick = document.querySelector("#user-pick");
-const computerPick = document.querySelector("#computer-pick");
 const userScoreText = document.querySelector("#user-score");
 const computerScoreText = document.querySelector("#computer-score");
 const choices = ["rock", "paper", "scissors", "lizard", "spock"];
 const playAgainBtn = document.querySelector("#play-again");
+const computerPickImg = document.querySelector("#computer-pick-img");
+const userPickImg = document.querySelector("#user-pick-img");
 let userChoice;
 let computerChoice;
-let resultText;
 let userScore = 0;
 let computerScore = 0;
+let resultText;
 
 btns.forEach((btn) =>
   btn.addEventListener("click", (e) => {
@@ -33,14 +33,26 @@ btns.forEach((btn) =>
 );
 
 function getUserChoice(e) {
+  if (userChoice !== null) {
+    userPickImg.classList.remove(userChoice, "scale");
+  }
   userChoice = e.target.textContent;
-  userPick.textContent = userChoice;
+  userPickImg.classList.add(userChoice);
+  setTimeout(function () {
+    userPickImg.classList.add("scale");
+  }, 400);
 }
 
 function getComputerChoice() {
+  if (computerChoice !== null) {
+    computerPickImg.classList.remove(computerChoice, "scale");
+  }
   const computerIndex = Math.floor(Math.random() * 5);
   computerChoice = choices[computerIndex];
-  computerPick.textContent = computerChoice;
+  computerPickImg.classList.add(computerChoice);
+  setTimeout(function () {
+    computerPickImg.classList.add("scale");
+  }, 1000);
 }
 
 function calculateResult() {

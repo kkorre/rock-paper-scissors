@@ -1,5 +1,6 @@
 body {
-  background-color: #161661;
+  font-family: "Roboto", sans-serif;
+  background-image: radial-gradient(#2c0e63 8%, #252b52 60%);
   height: 100vh;
   display: flex;
   flex-direction: column;
@@ -7,12 +8,195 @@ body {
   align-items: center;
   color: #fff;
   font-size: 24px;
+  font-weight: 500;
+}
+
+button {
+  cursor: pointer;
+}
+
+h1 {
+  margin-bottom: 50px;
+  text-align: center;
+  font-weight: 500;
+}
+
+h3 {
+  font-weight: 500;
 }
 
 .screen {
   display: none;
+  max-width: 350px;
+  width: 100%;
+  margin: auto;
 }
 
 .visible {
   display: block;
+}
+
+.btn-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.btn {
+  width: 85px;
+  height: 85px;
+  text-indent: -9999px;
+  border: 7px solid;
+  padding: 0;
+  margin: 0 7px 14px;
+  border-radius: 50%;
+  background-color: #fff;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 58%;
+  transition: box-shadow 0.4s, transform 0.4s;
+}
+
+.btn:hover {
+  box-shadow: 0 0 4px 10px #464c80;
+}
+
+.paper {
+  background-image: url(images/icon-paper.svg);
+  border-color: #ffc107;
+}
+
+.rock {
+  background-image: url(images/icon-rock.svg);
+  border-color: #e88179;
+}
+
+.scissors {
+  background-image: url(images/icon-scissors.svg);
+  border-color: #00bcd4;
+}
+
+.lizard {
+  background-image: url(images/icon-lizard.svg);
+  border-color: #8bc34a;
+}
+.spock {
+  background-image: url(images/icon-spock.svg);
+  border-color: #cb71da;
+}
+
+.score-container {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 40px;
+}
+
+.score {
+  background-color: #fff;
+  width: 86px;
+  height: 68px;
+  color: #7e62af;
+  font-size: 14px;
+  text-align: center;
+  border-radius: 4px;
+  padding-top: 12px;
+}
+
+.score-points {
+  font-size: 36px;
+  color: #777;
+}
+
+.pick-container {
+  display: flex;
+}
+
+.pick-img {
+  width: 130px;
+  height: 130px;
+  border-width: 7px;
+  border-style: solid;
+  border-radius: 50%;
+  background-color: #fff;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 58%;
+  margin: auto;
+  transform: scale(0);
+  transition: transform 0.7s;
+}
+
+.pick {
+  width: 50%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  font-size: 20px;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.btn-primary {
+  padding: 16px 32px;
+  font-weight: 600;
+  font-size: 16px;
+  border-radius: 4px;
+  border: 0;
+  color: #7e62af;
+  background-color: #fff;
+  transition: background-color 0.5s, color 0.5s;
+}
+
+.btn-primary:hover {
+  color: #fff;
+  background-color: #7e62af;
+}
+
+.scale {
+  transform: scale(1);
+}
+
+@media (min-width: 440px) {
+  .btn {
+    width: 120px;
+    height: 120px;
+  }
+  .screen {
+    max-width: 440px;
+  }
+}
+
+@media (min-width: 768px) {
+  .btn {
+    width: 150px;
+    height: 150px;
+    margin: 0 20px 40px;
+    border-width: 10px;
+  }
+  .btn:hover {
+    box-shadow: 0 0 20px 15px #4e5694;
+    transform: scale(1.1);
+  }
+  .screen {
+    max-width: 640px;
+  }
+  .score {
+    height: 100px;
+  }
+  .pick {
+    font-size: 24px;
+  }
+  .pick-img {
+    width: 200px;
+    height: 200px;
+    border-width: 15px;
+  }
+  .score-points {
+    font-size: 50px;
+  }
+  .score-container {
+    margin-bottom: 80px;
+  }
 }

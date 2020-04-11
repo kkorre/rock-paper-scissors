@@ -4,24 +4,49 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Rock, Paper, Scissors, Lizard, Spock</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <section class="screen visible" id="screen-1">
-      <button class="btn btn--paper">paper</button>
-      <button class="btn btn--rock">rock</button>
-      <button class="btn btn--scissors">scissors</button>
-      <button class="btn btn--lizard">lizard</button>
-      <button class="btn btn--spock">spock</button>
+      <h1>Rock, Paper, Scissors, Lizard, Spock</h1>
+      <div class="btn-container">
+        <button class="btn paper">paper</button>
+        <button class="btn rock">rock</button>
+        <button class="btn scissors">scissors</button>
+        <button class="btn lizard">lizard</button>
+        <button class="btn spock">spock</button>
+      </div>
     </section>
 
     <section class="screen" id="screen-2">
-      <div>User: <span id="user-score">0</span></div>
-      <div>Computer: <span id="computer-score">0</span></div>
-      <p>You picked <span id="user-pick"></span></p>
-      <p>The computer picked <span id="computer-pick"></span></p>
-      <p id="result"></p>
-      <button id="play-again">Play Again</button>
+      <div class="score-container">
+        <div class="score">
+          YOU
+          <div id="user-score" class="score-points">0</div>
+        </div>
+        <div class="score">
+          COMPUTER
+          <div id="computer-score" class="score-points">0</div>
+        </div>
+      </div>
+      <div class="pick-container">
+        <div class="pick">
+          <p>You picked</p>
+          <div id="user-pick-img" class="pick-img"></div>
+        </div>
+        <div class="pick">
+          <p>Computer picked</p>
+          <div id="computer-pick-img" class="pick-img"></div>
+        </div>
+      </div>
+      <div class="text-center">
+        <h3 id="result"></h3>
+        <button class="btn-primary" id="play-again">PLAY AGAIN</button>
+      </div>
     </section>
 
     <script src="script.js"></script>
